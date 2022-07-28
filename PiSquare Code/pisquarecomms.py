@@ -85,7 +85,7 @@ class PSComms:
     def sendData(self, data):
         payload = ujson.loads(data)
         datajson = {"client": self.__thisdevice, "payload": payload}
-        print(datajson)
+        # print(datajson)
         datatext = ujson.dumps(datajson, separators=(',', ':'))
 
         self.__uart.write(datatext.encode())
@@ -95,6 +95,6 @@ class PSComms:
 
         if data is not None:
             data = data.decode()
-            print(data)
+            # print(data)
             return data
         return None
