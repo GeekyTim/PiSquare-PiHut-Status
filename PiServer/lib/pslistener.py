@@ -20,8 +20,8 @@ class PSListener(threading.Thread):
         self.__listeningsocket.setblocking(False)
         self.__selector.register(self.__listeningsocket, selectors.EVENT_READ, data=None)
 
-        print(self.__clientlist)
-        print(f"Listening on {self.__port}")
+        # print(self.__clientlist)
+        # print(f"Listening on {self.__port}")
 
         super(PSListener, self).__init__()
 
@@ -59,19 +59,18 @@ class PSListener(threading.Thread):
                         data.outb = response
                         mask = selectors.EVENT_WRITE
             else:
-                print(f"Closing connection to {data.addr}")
+                # print(f"Closing connection to {data.addr}")
                 self.__selector.unregister(sock)
                 sock.close()
 
         if mask & selectors.EVENT_WRITE:
             if data.outb:
-                print(f"Echoing {data.outb} to {data.addr}")
                 sent = sock.send(data.outb.encode())  # Should be ready to write
                 data.outb = data.outb[sent:]
 
     def __accept_connection(self, serversocket):
         connection, address = serversocket.accept()  # Should be ready to read
-        print(f"Accepted connection from {address}")
+        # print(f"Accepted connection from {address}")
         connection.setblocking(False)
         data = types.SimpleNamespace(addr=address, inb=b"", outb=b"")
         events = selectors.EVENT_READ | selectors.EVENT_WRITE

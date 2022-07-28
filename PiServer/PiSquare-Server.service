@@ -1,0 +1,13 @@
+[Unit]
+Description=PiSquare-Server
+After=multi-user.target
+
+[Service]
+Type=idle
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/AirPi/PiServer/pisquare-server.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -20,14 +20,12 @@ class PiHutStatus:
             self.__thisclient.append((itemdef['psalias'], itemdef['host'], itemclass))
 
     def handlerequest(self, payload):
-        print("handling request", payload)
         action = payload['action']
         button = payload['button']
         response = None
 
         if action == 'requeststatus':
             itemstatus = self.getstatus(button)
-            print(button, itemstatus)
             if itemstatus is not None:
                 response = json.dumps({"client": self.__name, "payload": {"button": button, "status": itemstatus}},
                                       separators=(',', ':'))
