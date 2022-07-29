@@ -16,7 +16,7 @@ class TPLink:
 
         self.loop = asyncio.get_event_loop()
 
-    async def _getststus(self):
+    async def _getstatus(self):
         await self.__plug.update()  # Request the update
 
         if self.__plug.is_on:
@@ -49,7 +49,7 @@ class TPLink:
 
     @property
     def getstatus(self):
-        return self.loop.run_until_complete(self._getststus())
+        return self.loop.run_until_complete(self._getstatus())
 
     def turnon(self):
         return self.loop.run_until_complete(self._switch('on'))

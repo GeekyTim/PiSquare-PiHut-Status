@@ -1,4 +1,4 @@
-from lib import tplink, hue
+from lib import tplink, hue, tuya
 import json
 
 
@@ -16,6 +16,8 @@ class PiHutStatus:
                 itemclass = tplink.TPLink(itemdef['psalias'], itemdef['host'])
             elif itemtype == 'hue':
                 itemclass = hue.Hue(itemdef['host'], itemdef['psalias'])
+            elif itemtype == 'tuya':
+                itemclass = tuya.Tuya(itemdef['psalias'], itemdef['device_id'], itemdef['host'], itemdef['localkey'])
 
             self.__thisclient.append((itemdef['psalias'], itemdef['host'], itemclass))
 

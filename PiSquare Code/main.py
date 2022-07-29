@@ -6,7 +6,7 @@ import utime
 
 buttonleds = {'floodlight': ('GPIO14', 'GPIO4', 'GPIO17', ''),
               'computer'  : ('GPIO19', 'GPIO27', 'GPIO22', ''),
-              'laser'     : ('GPIO15', 'GPIO10', 'GPIO9', ''),
+              'Monitor'   : ('GPIO15', 'GPIO10', 'GPIO9', ''),
               'Ikea'      : ('GPIO26', 'GPIO11', 'GPIO5', ''),
               'Desk'      : ('GPIO18', 'GPIO6', 'GPIO13', '')}
 
