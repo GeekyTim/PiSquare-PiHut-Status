@@ -1,0 +1,33 @@
+port = 12420
+
+[clients]
+    [clients.pihut-status]
+        hat = "PiHut-Status"
+
+        [clients.pihut-status.io]
+            [clients.pihut-status.io.floodlight]
+            psalias = "floodlight"
+            type = "tplink"
+            host = "Hut8-HS100-Floodlight"
+
+            [clients.pihut-status.io.computer]
+            psalias = "computer"
+            type = "tplink"
+            host = "Hut8-HS100-Computer"
+
+            [clients.pihut-status.io.monitor]
+            psalias = "Monitor"
+            type = "tuya"
+            device_id = "yourdeviceid"
+            host = "Hut8-Tuya-Monitor"
+            localkey = "yourlocalkey"
+
+            [clients.pihut-status.io.ikea]
+            psalias = "Ikea"
+            type = "hue"
+            host = "StarFleet-Hue"
+
+            [clients.pihut-status.io.desk]
+            psalias = "Desk"
+            type = "hue"
+            host = "StarFleet-Hue"

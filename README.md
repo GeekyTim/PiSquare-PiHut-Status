@@ -18,8 +18,10 @@ the status of each. The lights are Philips Hue, and plugs are TP-Link - both of 
    1. toml
    2. phue
    3. python-kasa
-3. Edit the configuration.toml file (in the 'configs' folder) to define the names of your lamps and plugs.
-4. Run pisquare-server.py
+   4. tinytuya
+3. Rename configuration_template.toml to configuration.toml (in the 'configs' folder)
+4. Edit the configuration.toml file to define the names of your lamps and plugs.
+5. Run pisquare-server.py
 
 ## PiSquare Code (MicroPython)
 
